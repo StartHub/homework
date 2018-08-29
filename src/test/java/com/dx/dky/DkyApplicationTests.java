@@ -2,9 +2,8 @@ package com.dx.dky;
 
 import com.dx.dky.dao.UserMapper;
 import com.dx.dky.domain.User;
-import com.dx.dky.rabbitmq.MqSenderService;
-import com.dx.dky.rabbitmq.config.RabbitmqQueue;
-import javafx.application.Application;
+import com.dx.dky.config.rabbitmq.MqSenderService;
+import com.dx.dky.config.rabbitmq.config.RabbitmqQueue;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.junit4.SpringRunner;
 
 //@RunWith(SpringRunner.class)
 
