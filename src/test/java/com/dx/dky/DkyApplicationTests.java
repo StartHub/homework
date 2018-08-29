@@ -3,7 +3,6 @@ package com.dx.dky;
 import com.dx.dky.dao.UserMapper;
 import com.dx.dky.domain.User;
 import com.dx.dky.config.rabbitmq.MqSenderService;
-import com.dx.dky.config.rabbitmq.config.RabbitmqQueue;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,28 +28,29 @@ public class DkyApplicationTests {
     @Rollback
     public void findByName() throws Exception {
         userMapper.insert("AAA", 20);
-        User u = userMapper.findByName("AAA");
+        User u = userMapper.findById(2);
         Assert.assertEquals(20, u.getAge().intValue());
+        System.out.println(u.getName());
     }
 
     @Autowired
     MqSenderService mqSenderService;
 
-    @Test
-    public void sendMsg() throws InterruptedException {
-        try {
-
-            for (int i = 0; i < 5; i++) {
-                System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<已发送消息>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-                mqSenderService.sendDirect(RabbitmqQueue.CONTRACE_JF_MSGINFO, "恭喜你获得" + i * 10 + "积分！");
-                System.out.println(i);
-            }
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-
-        Thread.sleep(10000);
-    }
+//    @Test
+//    public void sendMsg() throws InterruptedException {
+//        try {
+//
+//            for (int i = 0; i < 5; i++) {
+//                System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<已发送消息>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+//                mqSenderService.sendDirect(RabbitmqQueue.CONTRACE_JF_MSGINFO, "恭喜你获得" + i * 10 + "积分！");
+//                System.out.println(i);
+//            }
+//
+//        } catch (Exception e) {
+//            System.out.println(e.getMessage());
+//        }
+//
+//        Thread.sleep(10000);
+//    }
 
 }
