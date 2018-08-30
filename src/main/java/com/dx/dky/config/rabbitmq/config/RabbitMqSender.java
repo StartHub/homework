@@ -46,12 +46,14 @@ public class RabbitMqSender implements RabbitTemplate.ConfirmCallback {
         this.rabbitTemplate.convertAndSend(RabbitmqExchange.CONTRACT_TOPIC, routeKey, obj, correlationData);
     }
 
-
     /**
      * 回调方法
      */
     @Override
     public void confirm(CorrelationData correlationData, boolean ack, String cause) {
+        if(!ack){
+            LOGGER.info("send message failed: " + cause + correlationData.toString());
+        }
         LOGGER.info("confirm: " + correlationData.getId());
     }
 }

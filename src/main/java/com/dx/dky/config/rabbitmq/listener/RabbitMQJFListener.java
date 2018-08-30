@@ -14,9 +14,9 @@ public class RabbitMQJFListener {
     @RabbitListener(queues = RabbitmqQueue.CONTRACE_JF_MSGINFO)
     public void jFHandler(String obj) {
 
-        logger.info("开始处理JF消息");
+        logger.info("【homework】---->>>>>>>开始处理JF消息");
         System.out.println(obj);
-        logger.info("JF消息处理结束");
+        logger.info("【homework】---->>>>>>>JF消息处理结束");
     }
 
 }

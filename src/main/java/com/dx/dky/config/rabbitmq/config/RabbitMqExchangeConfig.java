@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * 新增业务时，两个步骤
  * 1、增加 queue bean ，参照queueXXXX方法
  * 2增加 queue 和 exchange的binding,参照 bindingExchangeXXXX方法(topic类似于模糊查询，对不同的routekey中特定关键词进行消费)
+ *
  */
 @Configuration
 @AutoConfigureAfter(RabbitMqConfig.class)
@@ -42,6 +43,11 @@ public class RabbitMqExchangeConfig {
 
     /*************   开始 Queue队列  定义  *******************/
 
+    /**
+     * durable 持久化参数
+     * @param rabbitAdmin
+     * @return
+     */
     @Bean
     Queue queueJf(RabbitAdmin rabbitAdmin) {
         Queue queue = new Queue(RabbitmqQueue.CONTRACE_JF_MSGINFO, true);

@@ -10,3 +10,13 @@
 【2】测试rabbitmq的vhost是否可以实现多应用使用同一rabbitmq
     就是一个rabbitmq配置多个vhost，区分虚拟主机及用户组
     实现之前 dev test 共用同一rabbitmq配置导致数据消费错乱及测试失败的问题
+    总结：不同环境对应不同的vhost 添加不同的用户
+    
+【2】关于rabbitmq的持久化
+    rabbitmq持久化分三部分：
+        Exchange持久化(交换机)
+            声明时指定durable => true(默认为true)
+        Queue持久化(队列)
+            声明时指定durable => true
+        Message持久化(消息)
+        
