@@ -87,7 +87,6 @@ public class DkyApplicationTests {
         if(b2 == false){
             boolean b3 = OptLockByRedis.releaseDistributedLock(jedis, "addOrder", "100000001");
             System.out.println("释放分布式锁3 ===>" +  b3);
-
         }
 
 
