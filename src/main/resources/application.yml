@@ -11,15 +11,27 @@ spring:
   resources:
     static-locations: classpath:/META-INF/resources
 
-  rabbitmq:
-    addresses: 192.168.15.203:5672
-    username: root
-    password: password
-#    addresses: 172.16.137.140:5672
-#    username: admin
-#    password: admin
-    publisher-confirms: true
-    virtual-host: /
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    pool:
+      max-active: 8
+      max-idle: 8
+      min-idle: 0
+      max-wait: 2
+    timeout: 2000
+
+
+#  rabbitmq:
+#    addresses: 192.168.15.203:5672
+#    username: root
+#    password: password
+##    addresses: 172.16.137.140:5672
+##    username: admin
+##    password: admin
+#    publisher-confirms: true
+#    virtual-host: /
 
 ##########访问页面时出现  需要身份验证  添加一下配置可以解决
 #security:

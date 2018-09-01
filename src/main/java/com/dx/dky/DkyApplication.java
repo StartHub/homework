@@ -1,9 +1,12 @@
 package com.dx.dky;
 
+import com.dx.dky.config.redis.JedisUtil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
+@Import({JedisUtil.class})
 public class DkyApplication {
 
 	public static void main(String[] args) {
