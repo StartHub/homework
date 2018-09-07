@@ -28,6 +28,10 @@ public class DkyApplicationTests {
 
     private static final Logger logger = LoggerFactory.getLogger(DkyApplicationTests.class);
 
+
+    StringBuffer sb = new StringBuffer();
+
+
     @Test
     public void contextLoads() {
     }

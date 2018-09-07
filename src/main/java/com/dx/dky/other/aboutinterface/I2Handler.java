@@ -9,4 +9,7 @@ package com.dx.dky.other.aboutinterface;
 public interface I2Handler {
 
     void play();
+
+    void eat(String name, int age);
+    void eat(int age, String name);
 }

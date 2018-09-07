@@ -1,5 +1,8 @@
 package com.dx.dky.other.aboutinterface;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * ${DESCRIPTION}
  * 接口实现类
@@ -22,6 +25,19 @@ public class BaseHandler implements Ihandler {
 
     @Override
     public void play() {
+
+    }
+
+    @Override
+    public void eat(String name, int age) {
+
+        String a = "";
+
+        List list = new ArrayList();
+    }
+
+    @Override
+    public void eat(int age, String name) {
 
     }
 }
