@@ -12,11 +12,25 @@
     实现之前 dev test 共用同一rabbitmq配置导致数据消费错乱及测试失败的问题
     总结：不同环境对应不同的vhost 添加不同的用户
     
-【2】关于rabbitmq的持久化
+【3】关于rabbitmq的持久化
     rabbitmq持久化分三部分：
         Exchange持久化(交换机)
             声明时指定durable => true(默认为true)
         Queue持久化(队列)
             声明时指定durable => true
         Message持久化(消息)
+        
+ 【4】关于JDK动态代理
+      面向接口，生成接口实现类的代理对象，对代理对象的某些方法进行扩展；
+      如 Spring事务Transcational 生成代理类，在需要添加事务的方法前后，
+      添加额外的业务逻辑；
+ 【】
+ 【】
+ 【】
+ 【】
+ 【】
+ 【】
+ 【】
+ 【】
+ 
         
