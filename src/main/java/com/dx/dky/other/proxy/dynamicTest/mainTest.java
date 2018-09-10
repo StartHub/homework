@@ -19,11 +19,17 @@ public class mainTest {
 
         System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
 
-        RealSubject realSubject = new RealSubject();
-        Subject sub = (Subject) Proxy.newProxyInstance(
-                realSubject.getClass().getClassLoader(),
-                realSubject.getClass().getInterfaces(),
-                new DynamicSubject2(realSubject));
-        sub.printArgs("张飞");
+//        RealSubject realSubject = new RealSubject();
+//        Subject sub = (Subject) Proxy.newProxyInstance(
+//                realSubject.getClass().getClassLoader(),
+//                realSubject.getClass().getInterfaces(),
+//                new DynamicSubject2(realSubject));
+//        sub.printArgs("张飞");
+
+        System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+
+        Subject sub2 = DynamicSubject3.newMapperProxy(Subject.class);
+        sub2.printArgs("lisi");
+
     }
 }
