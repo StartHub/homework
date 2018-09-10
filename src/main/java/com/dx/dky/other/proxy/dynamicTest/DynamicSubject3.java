@@ -18,7 +18,7 @@ public class DynamicSubject3 implements InvocationHandler {
         System.out.println("方法执行前，打印入参：" + JSON.toJSONString(args));
         Long time1 = System.currentTimeMillis();
 //        Object obj = method.invoke(target, args);
-        System.out.println("No Invoke Method, cannt find would execute method!!!");
+        System.out.println("No Invoke Method, cannt find would execute method？ do you konw?");
         Long time2 = System.currentTimeMillis();
 //        System.out.println("方法执行后，打印输出：" + JSON.toJSONString(obj));
         System.out.println("方法执行后，打印输出：" + JSON.toJSONString(""));
