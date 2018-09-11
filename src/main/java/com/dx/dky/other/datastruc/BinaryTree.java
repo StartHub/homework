@@ -13,7 +13,7 @@ public class BinaryTree {
     BinaryTree(int value){
         root = new Node(value);
         root.leftChild = null;
-        root.rightChile = null;
+        root.rightChild = null;
     }
 
     // todo 插入
@@ -22,28 +22,28 @@ public class BinaryTree {
         Node node = new Node(value);
         if(root == null){
             root = node;
-            node.rightChile = null;
+            node.rightChild = null;
             node.leftChild = null;
         }else {
             Node current = root;
             Node parent = null;
             while(true){
+                parent = current;
                 if(value < current.value){
-                    parent = current;
                     current = current.leftChild;
                     if(current == null){
                         parent.leftChild = node;
                         break;
                     }
                 }else if(value > current.value){
-                    parent = current;
-                    current = current.rightChile;
+                    current = current.rightChild;
                     if(current == null){
-                        parent.rightChile = node;
+                        parent.rightChild = node;
                         break;
                     }
                 }else {
                     error = "Have same node in current tree!";
+                    break;
                 }
             }
         }
@@ -62,7 +62,7 @@ public class BinaryTree {
             if(value == current.value){
                 return current;
             }else if(value > current.value){
-                return current = current.rightChile;
+                return current = current.rightChild;
             }else if(value < current.value){
                 return current = current.leftChild;
             }
@@ -71,23 +71,106 @@ public class BinaryTree {
     }
 
     // todo 删除
+    public boolean delete(int value) {
+        Node current = root;    //需要删除的节点
+        Node parent = null;     //需要删除的节点的父节点
+        boolean isLeftChild = true;   //需要删除的节点是否父节点的左子树
+
+        if(current == null){
+            return false;
+        }
+
+        while (true){
+            if(value == current.value){
+                break;
+            }else if(value < current.value){
+                isLeftChild = true;
+                parent = current;
+                current = current.leftChild;
+            }else {
+                isLeftChild = false;
+                parent = current;
+                current = current.rightChild;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     *   todo 中序遍历(递归)
+     *   1、调用自身来遍历节点的左子树
+     *   2、访问这个节点
+     *   3、调用自身来遍历节点的右子树
+     */
+    public void inOrderTraverse(Node node) {
+        if(node == null){
+            return;
+        }
+        inOrderTraverse(node.leftChild);
+        node.printNode(node);
+        inOrderTraverse(node.rightChild);
+    }
+
+    /**
+     * todo 前序遍历
+     *    1、访问这个节点
+     *    2、调用自身来遍历节点的左子树
+     *    3、调用自身来遍历节点的右子树
+     */
+    public void preOrderTraverse(Node node) {
+        if(node == null){
+            return;
+        }
+        node.printNode(node);
+        preOrderTraverse(node.leftChild);
+        preOrderTraverse(node.rightChild);
+    }
+
+    /**
+     * todo 后序遍历
+     *    1、调用自身来遍历节点的左子树
+     *    2、调用自身来遍历节点的右子树
+     *    3、访问这个节点
+     */
+    public void postOrderTraverse(Node node) {
+        if(node == null){
+            return;
+        }
+        postOrderTraverse(node.leftChild);
+        postOrderTraverse(node.rightChild);
+        node.printNode(node);
+    }
+
     // todo
     // todo
     // todo
-    // todo
-
-
-
-
 
     class Node{
-
         int value;
         Node leftChild;
-        Node rightChile;
+        Node rightChild;
 
-        Node(int value){
+        public Node(){
+            super();
+        }
+
+        public Node(int value){
+            super();
             this.value = value;
+        }
+
+        public Node(int value, Node leftChild, Node rightChild){
+            super();
+            this.value = value;
+            this.leftChild = leftChild;
+            this.rightChild = rightChild;
+        }
+
+        public void printNode(Node node){
+            if(node != null){
+                System.out.println("当前节点value：" + node.value);
+            }
         }
 
         @Override
@@ -105,8 +188,15 @@ public class BinaryTree {
         tree.insert(4);
         tree.insert(5);
 
-        System.out.println(tree.toString());
-        System.out.println(tree.search(5));
+        System.out.println("中序遍历：");
+        tree.inOrderTraverse(tree.root);
+        System.out.println("前序遍历：");
+        tree.preOrderTraverse(tree.root);
+        System.out.println("后序遍历：");
+        tree.postOrderTraverse(tree.root);
+
+//        System.out.println(tree.toString());
+//        System.out.println(tree.search(3));
 
     }
 }
