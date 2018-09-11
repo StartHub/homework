@@ -1,7 +1,7 @@
 package com.dx.dky.other.datastruc;
 
 /**
- * ${DESCRIPTION}
+ * 链表实现队列
  *
  * @author : dengxu
  * @create 2018-09-06 15:04

@@ -77,7 +77,7 @@ public class BinaryTree {
         boolean isLeftChild = true;   //需要删除的节点是否父节点的左子树
 
         if(current == null){
-            return false;
+
         }
 
         while (true){
