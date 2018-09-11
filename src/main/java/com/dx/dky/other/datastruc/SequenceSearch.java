@@ -1,4 +1,4 @@
-package com.dx.dky.other;
+package com.dx.dky.other.datastruc;
 
 /**
  * 顺序查找算法

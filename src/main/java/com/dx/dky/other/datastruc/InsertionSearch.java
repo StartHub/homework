@@ -1,4 +1,4 @@
-package com.dx.dky.other;
+package com.dx.dky.other.datastruc;
 
 import java.util.Arrays;
 
