@@ -1,5 +1,7 @@
 package com.dx.dky.other.datastruc;
 
+import static java.lang.System.*;
+
 /**
  * 二叉查找树
  *
@@ -169,7 +171,7 @@ public class BinaryTree {
 
         public void printNode(Node node){
             if(node != null){
-                System.out.println("当前节点value：" + node.value);
+                out.println("当前节点value：" + node.value);
             }
         }
 
@@ -181,22 +183,42 @@ public class BinaryTree {
 
     public static void main(String[] args) {
 
-        BinaryTree tree = new BinaryTree(3);
-        tree.insert(1);
-        tree.insert(2);
-        tree.insert(3);
-        tree.insert(4);
-        tree.insert(5);
-
-        System.out.println("中序遍历：");
-        tree.inOrderTraverse(tree.root);
-        System.out.println("前序遍历：");
-        tree.preOrderTraverse(tree.root);
-        System.out.println("后序遍历：");
-        tree.postOrderTraverse(tree.root);
+//        BinaryTree tree = new BinaryTree(3);
+//        tree.insert(1);
+//        tree.insert(2);
+//        tree.insert(3);
+//        tree.insert(4);
+//        tree.insert(5);
+//
+//        System.out.println("中序遍历：");
+//        tree.inOrderTraverse(tree.root);
+//        System.out.println("前序遍历：");
+//        tree.preOrderTraverse(tree.root);
+//        System.out.println("后序遍历：");
+//        tree.postOrderTraverse(tree.root);
 
 //        System.out.println(tree.toString());
 //        System.out.println(tree.search(3));
 
+
+//        String avg = "abcdefghijklmnopqrstuvwxyz";
+//        char[] avv = avg.toCharArray();
+//        int start = 0;
+//        int end = avv.length - 1;
+//        while(true){
+//            if(end > start){
+//                char temp;
+//                temp = avv[start];
+//                avv[start] = avv[end];
+//                avv[end] = temp;
+//                start++;
+//                end--;
+//            }else {
+//
+//                break;
+//            }
+//        }
+//        System.out.println(avg);
+//        System.out.println(String.valueOf(avv));
     }
 }
