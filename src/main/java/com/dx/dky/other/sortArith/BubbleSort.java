@@ -10,6 +10,7 @@ import java.util.Arrays;
  **/
 public class BubbleSort {
 
+
     public static void main(String[] args) {
 
         int[] arr = {66, 87, 30, 4, 6, 9, 39, 67, 24};
