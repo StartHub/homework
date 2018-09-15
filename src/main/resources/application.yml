@@ -30,8 +30,15 @@ spring:
 ##    addresses: 172.16.137.140:5672
 ##    username: admin
 ##    password: admin
+#
+##开启发送确认
 #    publisher-confirms: true
+##开启发送失败退回
+#    publisher-returns: true
 #    virtual-host: /
+#    listener:
+#      simple:
+#        acknowledge-mode: manual
 
 ##########访问页面时出现  需要身份验证  添加一下配置可以解决
 #security:

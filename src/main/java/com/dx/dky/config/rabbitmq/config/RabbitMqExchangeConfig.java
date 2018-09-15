@@ -44,7 +44,7 @@
 //    /*************   开始 Queue队列  定义  *******************/
 //
 //    /**
-//     * durable 持久化参数
+//     * durable 持久化参数 true 持久化 false 不持久化
 //     * @param rabbitAdmin
 //     * @return
 //     */
