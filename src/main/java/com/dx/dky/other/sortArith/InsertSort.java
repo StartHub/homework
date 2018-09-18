@@ -3,7 +3,7 @@ package com.dx.dky.other.sortArith;
 import java.util.Arrays;
 
 /**
- * 插入排序
+ * 插值排序
  *
  * @author : dengxu
  * @create 2018-09-12 17:01
