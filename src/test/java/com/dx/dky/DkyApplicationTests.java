@@ -6,12 +6,12 @@ import com.dx.dky.config.redis.JedisUtil;
 import com.dx.dky.config.redis.OptLockByRedis;
 import com.dx.dky.dao.UserMapper;
 import com.dx.dky.domain.User;
+import com.dx.dky.other.singleton.Singleton7Type;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
@@ -96,5 +96,19 @@ public class DkyApplicationTests {
 
 
     }
+
+//    @Test
+//    public void test1() throws InterruptedException {
+//
+//        Singleton7Type singleton7Type = new Singleton7Type();
+//
+//        System.out.println(Singleton7Type.outTime);
+//        Thread.sleep(3000);
+//
+//        Singleton7Type.InnerClass innerClass = singleton7Type.new InnerClass();
+//
+//        System.out.println(Singleton7Type.Singleton1.innerTime);
+//        System.out.println(innerClass.innerOutTime);
+//    }
 
 }

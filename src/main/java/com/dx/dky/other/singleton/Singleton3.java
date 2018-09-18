@@ -2,7 +2,8 @@ package com.dx.dky.other.singleton;
 
 /**
  * 当实例为null的时候，需要获取同步锁，去创建实例，当实例存在，无需试图加锁。
- *
+ *  第一个null判断，如果有实例直接返回，提升效率；
+ *  第二个null判断，如果实例不存在，再去实例化；
  * 缺点：双重判断，复杂，容易出错。
  */
 public class Singleton3 {

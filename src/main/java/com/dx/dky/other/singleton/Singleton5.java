@@ -6,9 +6,7 @@ package com.dx.dky.other.singleton;
  */
 public class Singleton5 {
 
-    public Singleton5() {
-
-    }
+    public Singleton5() {}
 
     private static class SingletonHolder {
         private final static Singleton5 instance = new Singleton5();
@@ -20,4 +18,5 @@ public class Singleton5 {
     public static Singleton5 getInstance() {
         return SingletonHolder.instance;
     }
+
 }
