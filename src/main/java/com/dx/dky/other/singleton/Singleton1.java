@@ -21,5 +21,4 @@ public class Singleton1 {
 
         return singleton;
     }
-
 }

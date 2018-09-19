@@ -21,7 +21,6 @@ public class Singleton3 {
                 }
             }
         }
-
         return singleton3;
     }
 }
