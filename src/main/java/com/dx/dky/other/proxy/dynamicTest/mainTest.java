@@ -1,9 +1,6 @@
 package com.dx.dky.other.proxy.dynamicTest;
 
-import com.dx.dky.other.proxy.RealSubject;
 import com.dx.dky.other.proxy.Subject;
-
-import java.lang.reflect.Proxy;
 
 /**
  * @Descrintion:

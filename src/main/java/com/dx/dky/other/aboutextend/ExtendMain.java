@@ -8,16 +8,23 @@ package com.dx.dky.other.aboutextend;
  **/
 public class ExtendMain {
 
+//    public static void main(String[] args) {
+//
+//        ClassA obj1 = new ClassA();
+//        ClassB obj2 = new ClassB();
+//        ClassA obj3 = new ClassB();
+//
+//        System.out.println(obj1.whoAmi());
+//        System.out.println(obj2.whoAmi());
+//        System.out.println(obj3.whoAmi());
+//
+//
+//    }
+
     public static void main(String[] args) {
 
-        ClassA obj1 = new ClassA();
-        ClassB obj2 = new ClassB();
-        ClassA obj3 = new ClassB();
-
-        System.out.println(obj1.whoAmi());
-        System.out.println(obj2.whoAmi());
-        System.out.println(obj3.whoAmi());
-
+        Student student = new Student("张三");
+        student.getName();
 
     }
 }

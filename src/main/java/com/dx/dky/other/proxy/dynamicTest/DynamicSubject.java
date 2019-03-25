@@ -13,7 +13,7 @@ import java.lang.reflect.Proxy;
  */
 public class DynamicSubject implements InvocationHandler {
 
-    Subject subject;
+    private Subject subject;
 
     public Object getInstance (Subject subject) {
         this.subject = subject;

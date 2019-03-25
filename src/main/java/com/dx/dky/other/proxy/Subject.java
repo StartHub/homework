@@ -6,7 +6,8 @@ package com.dx.dky.other.proxy;
  * @Date: Created in 16:08 2017/12/2
  */
 public interface Subject {
+
     public void doSomething();
 
-    String printArgs(String uname);
+    public String printArgs(String uname);
 }
