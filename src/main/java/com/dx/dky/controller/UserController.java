@@ -2,6 +2,7 @@ package com.dx.dky.controller;
 
 import com.dx.dky.config.rabbitmq.MqSenderService;
 import com.dx.dky.config.rabbitmq.config.RabbitmqQueue;
+import com.dx.dky.domain.Person;
 import com.dx.dky.domain.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -88,6 +89,23 @@ public class UserController {
         }
 
         Thread.sleep(10000);
+    }
+
+    public static void main(String[] args) {
+
+
+        List<User> users = new ArrayList<>();
+        List<Person> persons = new ArrayList<>();
+
+        User user = new User();
+
+        Person person = new Person();
+
+        users.add((User) person);
+
+        persons.add(user);
+
+
     }
 
 

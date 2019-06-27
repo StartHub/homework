@@ -1,6 +1,7 @@
 package com.dx.dky.domain;
 
-public class User {
+public class User extends Person{
+
     private Integer id;
 
     private String name;

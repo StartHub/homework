@@ -11,6 +11,7 @@ import java.util.TreeMap;
  * 带虚拟节点的一致性Hash算法
  */
 public class ConsistentHashingWithVirtualNode {
+
     //待添加入Hash环的服务器列表
     private static String[] servers = {"192.168.0.0:111", "192.168.0.1:111", "192.168.0.2:111",
             "192.168.0.3:111", "192.168.0.4:111"};
@@ -26,8 +27,9 @@ public class ConsistentHashingWithVirtualNode {
 
     static{
         //先把原始的服务器添加到真实结点列表中
-        for(int i=0; i<servers.length; i++)
+        for(int i=0; i<servers.length; i++) {
             realNodes.add(servers[i]);
+        }
 
         //再添加虚拟节点，遍历LinkedList使用foreach循环效率会比较高
         for (String str : realNodes){
@@ -46,8 +48,9 @@ public class ConsistentHashingWithVirtualNode {
     private static int getHash(String str){
         final int p = 16777619;
         int hash = (int)2166136261L;
-        for (int i = 0; i < str.length(); i++)
+        for (int i = 0; i < str.length(); i++) {
             hash = (hash ^ str.charAt(i)) * p;
+        }
         hash += hash << 13;
         hash ^= hash >> 7;
         hash += hash << 3;
@@ -55,8 +58,9 @@ public class ConsistentHashingWithVirtualNode {
         hash += hash << 5;
 
         // 如果算出来的值为负数则取其绝对值
-        if (hash < 0)
+        if (hash < 0) {
             hash = Math.abs(hash);
+        }
         return hash;
     }
 
@@ -87,9 +91,10 @@ public class ConsistentHashingWithVirtualNode {
 
     public static void main(String[] args){
         String[] keys = {"太阳", "月亮", "星星"};
-        for(int i=0; i<keys.length; i++)
+        for(int i=0; i<keys.length; i++) {
             System.out.println("[" + keys[i] + "]的hash值为" +
                     getHash(keys[i]) + ", 被路由到结点[" + getServer(keys[i]) + "]");
+        }
     }
 
 }
