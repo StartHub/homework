@@ -144,7 +144,21 @@ public class BinaryTree {
         node.printNode(node);
     }
 
-    // todo
+    /**
+     * todo 求二叉树中节点个数
+     * 递归解法：
+     *  如果二叉树为空，节点个数为0
+     *  否则节点个数 = 左子树节点个数 + 右子树节点个数 + 1
+     * @param root
+     * @return
+     */
+    public int getNodeNum(Node root){
+        if(root == null){
+            return 0;
+        }
+        return getNodeNum(root.leftChild) + getNodeNum(root.rightChild) + 1;
+    }
+
     // todo
     // todo
 
@@ -183,22 +197,32 @@ public class BinaryTree {
 
     public static void main(String[] args) {
 
-//        BinaryTree tree = new BinaryTree(3);
-//        tree.insert(1);
-//        tree.insert(2);
-//        tree.insert(3);
-//        tree.insert(4);
-//        tree.insert(5);
-//
-//        System.out.println("中序遍历：");
-//        tree.inOrderTraverse(tree.root);
-//        System.out.println("前序遍历：");
-//        tree.preOrderTraverse(tree.root);
-//        System.out.println("后序遍历：");
-//        tree.postOrderTraverse(tree.root);
+        BinaryTree tree = new BinaryTree(30);
+        tree.insert(10);
+        tree.insert(20);
+        tree.insert(40);
+        tree.insert(25);
+        tree.insert(45);
+        tree.insert(15);
+        tree.insert(50);
+        tree.insert(60);
+
+        System.out.println("中序遍历：");
+        tree.inOrderTraverse(tree.root);
+        System.out.println("前序遍历：");
+        tree.preOrderTraverse(tree.root);
+        System.out.println("后序遍历：");
+        tree.postOrderTraverse(tree.root);
 
 //        System.out.println(tree.toString());
 //        System.out.println(tree.search(3));
+
+
+        System.out.println("*********节点个数******");
+        tree.getNodeNum(tree.root);
+
+
+
 
 
 //        String avg = "abcdefghijklmnopqrstuvwxyz";

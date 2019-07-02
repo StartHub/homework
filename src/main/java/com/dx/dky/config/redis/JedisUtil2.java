@@ -1,8 +1,12 @@
 package com.dx.dky.config.redis;
 
+import redis.clients.jedis.HostAndPort;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  * Oversold
@@ -13,13 +17,13 @@ import redis.clients.jedis.JedisPoolConfig;
 public class JedisUtil2 {
 
     // Redis服务器IP
-    private static final String ADDR = "Redis_IP";
+    private static final String ADDR = "192.168.15.203";
 
     // Redis的端口号
-    private static final int PORT = 6379;
+    private static final int PORT = 7000;
 
     // 在borrow一个jedis实例时，是否提前进行validate操作；如果为true，则得到的jedis实例均是可用的；
-    private static final boolean TEST_ON_BORROW = true;
+    private static final boolean TEST_ON_BORROW = false;
 
     // 控制一个pool最多有多少个状态为idle(空闲的)的jedis实例，默认值是8。
     private static final int MAX_IDLE = 200;
@@ -34,7 +38,14 @@ public class JedisUtil2 {
             JedisPoolConfig config = new JedisPoolConfig();
             config.setMaxIdle(MAX_IDLE);
             config.setTestOnBorrow(TEST_ON_BORROW);
-            jedisPool = new JedisPool(config, ADDR, PORT);
+
+            Set<HostAndPort> nodes = new LinkedHashSet<HostAndPort>();
+            nodes.add(new HostAndPort(ADDR, 7000));
+            nodes.add(new HostAndPort(ADDR, 7001));
+            nodes.add(new HostAndPort(ADDR, 7002));
+
+            jedisPool = new JedisPool(config, ADDR, PORT, 500, "bdgstore");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
