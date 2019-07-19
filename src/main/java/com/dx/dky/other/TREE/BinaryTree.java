@@ -132,7 +132,7 @@ public class BinaryTree {
     }
 
     /**
-     * 前序遍历
+     * todo 前序遍历
      * 访问根节点，前序遍历左子树，前序遍历右子树
      *
      * @param node
@@ -147,7 +147,7 @@ public class BinaryTree {
     }
 
     /**
-     * 中序遍历
+     * todo 中序遍历
      * 遍历左子树，访问根节点，中序遍历右子树
      *
      * @param node
@@ -162,7 +162,7 @@ public class BinaryTree {
     }
 
     /**
-     * 中序遍历
+     * todo 中序遍历
      * 遍历左子树，访问根节点，中序遍历右子树
      * 非递归 使用栈
      *
@@ -189,7 +189,7 @@ public class BinaryTree {
 
 
     /**
-     * 后续遍历
+     * todo 后续遍历
      * 后序遍历左子树，后序遍历右子树，访问根节点
      *
      * @param node

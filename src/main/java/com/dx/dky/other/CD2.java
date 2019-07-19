@@ -8,8 +8,11 @@ package com.dx.dky.other;
  **/
 public class CD2 {
     public static void main(String args[]){
-        Chicken c = new Chicken() ;
+//        Chicken c = new Chicken() ;
         //Egg e = new Egg() ;
+
+        System.out.println(Integer.toBinaryString(2));
+        System.out.println(Integer.toBinaryString(3));
     }
 }
 
