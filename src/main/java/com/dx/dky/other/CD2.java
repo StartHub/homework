@@ -8,8 +8,8 @@ package com.dx.dky.other;
  **/
 public class CD2 {
     public static void main(String args[]){
-//        Chicken c = new Chicken() ;
-        //Egg e = new Egg() ;
+        Chicken c = new Chicken();
+        Egg e = new Egg();
 
         System.out.println(Integer.toBinaryString(2));
         System.out.println(Integer.toBinaryString(3));
@@ -17,7 +17,7 @@ public class CD2 {
 }
 
 class Chicken{
-    private Egg e ;
+    private Egg e;
     private int age ;
     public Chicken(){
         e = new Egg() ;
@@ -32,10 +32,10 @@ class Chicken{
 
 }
 class Egg{
-    private Chicken chicken ;
+    private Chicken chicken;
     private int weight ;
     public Egg(){
-        chicken = new Chicken() ;
+        chicken = new Chicken();
         setWeight(1) ;
     }
     public int getWeight() {
