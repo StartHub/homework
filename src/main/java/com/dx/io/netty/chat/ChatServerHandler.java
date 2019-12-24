@@ -23,6 +23,7 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
             return;
         }
         Channel channel = ctx.channel();
+
         String user = channel.remoteAddress().toString();
         channelGroup.forEach(ch -> {
             if (ch == channel) {

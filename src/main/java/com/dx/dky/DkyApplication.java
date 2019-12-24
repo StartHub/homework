@@ -1,7 +1,6 @@
 package com.dx.dky;
 
 import com.dx.dky.config.redis.JedisUtil;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 
@@ -10,7 +9,7 @@ import org.springframework.context.annotation.Import;
 public class DkyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DkyApplication.class, args);
+//		SpringApplication.run(DkyApplication.class, args);
 
 //		List<String> list = new ArrayList<String>();
 //
@@ -32,5 +31,11 @@ public class DkyApplication {
 //		}
 //
 //		).start();
+
+		String a = "123";
+		String b = "123";
+		String c = new String("123");
+		System.out.println(a == b);
+		System.out.println(a == c);
 	}
 }
