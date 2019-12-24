@@ -1,7 +1,5 @@
 package com.dx.dky.other.datastruc;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 /**
  * @Descrintion: 单向链表以及操作
  * @Author: dengxu
@@ -15,7 +13,12 @@ public class SingleLinkedList {
     // 头结点
     private Node head;
 
-    // 链表头插入
+    /**
+     * 链表头插入
+     *      新节点要插入到原头节点的前面，新节点的next指向原头节点，新节点作为新的头节点
+     * @param value
+     * @return
+     */
     public Object addHead(Object value) {
         System.out.println("add head " + value + "……");
         Node node = new Node(value);
